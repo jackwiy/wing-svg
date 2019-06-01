@@ -50,5 +50,4 @@ ENV PATH=$PATH:/usr/local/go/bin
 #RUN cd /usr/local/glibc-2.18/ && mkdir build && cd build/ && ../configure --prefix=/usr && make -j2 && make install
 
 RUN echo "cd /usr/local/${SERVICE_NAME}/ && go run main.go" >/tmp/start.sh
-RUN find / -name *svg*
 CMD ["sh", "/tmp/start.sh"]
