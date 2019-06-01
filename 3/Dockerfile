@@ -1,6 +1,6 @@
 FROM centos
 
-RUN yum install -y make gcc gcc-c++ pkgconfig cmake librsvg2 librsvg2-devel git wget
+RUN yum install -y make gcc gcc-c++ pkgconfig librsvg2 librsvg2-devel git
 RUN find / -name *svg*
 #
 #/var/lib/yum/yumdb/l/5d0e419b48b01cd87baf99b7f25cfea01402128e-librsvg2-devel-2.40.20-1.el7-x86_64
@@ -44,6 +44,7 @@ RUN cd /usr/local && tar -zxvf go1.12.5.linux-amd64.tar.gz
 ENV GOROOT=/usr/local/go
 ENV PATH=$PATH:/usr/local/go/bin
 
+RUN go get github.com/rogpeppe/misc/svg
 ## 编译glibc-2.18
 #RUN cd /usr/local && wget http://ftp.gnu.org/gnu/glibc/glibc-2.18.tar.gz
 #RUN cd /usr/local && tar zxf glibc-2.18.tar.gz
